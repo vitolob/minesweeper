@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "description": "Famous Minesweeper game made popular by Microsoft Windows",
   "main": "src/minesweeper.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vitolob/minesweeper.git"
+  }
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "babel src -d lib"
