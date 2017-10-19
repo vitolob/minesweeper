@@ -6,7 +6,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/vitolob/minesweeper.git"
-  }
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "babel src -d lib"
