@@ -10,7 +10,7 @@ const generatePlayerBoard = (numberOfRows, numberOfColumns) => {
   // This loop creates a row
   for (let rowIndex = 0; rowIndex < numberOfRows; rowIndex++) {
 
-    row = [];
+    let row = [];
 
     // This loop creates a column
     for (let columnIndex = 0; columnIndex < numberOfColumns; columnIndex++) {
@@ -36,7 +36,7 @@ const generateBombBoard = (numberOfRows, numberOfColumns, numberOfBombs) => {
   // This loop creates a row
   for (let rowIndex = 0; rowIndex < numberOfRows; rowIndex++) {
 
-    row = [];
+    let row = [];
 
     // This loop creates a column
     for (let columnIndex = 0; columnIndex < numberOfColumns; columnIndex++) {
@@ -69,10 +69,15 @@ const generateBombBoard = (numberOfRows, numberOfColumns, numberOfBombs) => {
  * Takes a board array and prints it to the console
  */
 const printBoard = (board) => {
-
-  let boardString = board.map(row => {
-    row.join(' | ') // returns an array of formatted rows
-  }).join('\n'); // Joins the formatted rows into a correctly formatted board (string)
-
+  let boardString = board.map(row => row.join(' | ')).join('\n');
   console.log(boardString);
 };
+
+let playerBoard = generatePlayerBoard(3,4);
+let bombBoard = generateBombBoard(3,4,5);
+
+console.log('Player Board: ');
+printBoard(playerBoard);
+
+console.log('Bomb Board: ');
+printBoard(bombBoard);
