@@ -3,26 +3,21 @@
  * This board will hold the player's guesses
  */
 const generatePlayerBoard = (numberOfRows, numberOfColumns) => {
-
   // Empty board
   let board = [];
 
   // This loop creates a row
   for (let rowIndex = 0; rowIndex < numberOfRows; rowIndex++) {
-
     let row = [];
 
     // This loop creates a column
     for (let columnIndex = 0; columnIndex < numberOfColumns; columnIndex++) {
       row.push(' ');
     }
-
     board.push(row);
-
   }
 
   return board;
-
 };
 
 /**
@@ -35,24 +30,20 @@ const generateBombBoard = (numberOfRows, numberOfColumns, numberOfBombs) => {
 
   // This loop creates a row
   for (let rowIndex = 0; rowIndex < numberOfRows; rowIndex++) {
-
     let row = [];
 
     // This loop creates a column
     for (let columnIndex = 0; columnIndex < numberOfColumns; columnIndex++) {
       row.push(null);
     }
-
     board.push(row);
   }
 
   let numberOfBombsPlaced = 0;
 
   while (numberOfBombsPlaced < numberOfBombs) {
-
     // To be fixed:
     // Code with potential to place bombs on top of already existing ones
-
     let randomRowIndex = Math.floor(Math.random() * numberOfRows);
     let randomColumnIndex = Math.floor(Math.random() * numberOfColumns);
 
@@ -62,7 +53,6 @@ const generateBombBoard = (numberOfRows, numberOfColumns, numberOfBombs) => {
   }
 
   return board;
-
 };
 
 /*
