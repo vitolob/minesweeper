@@ -55,6 +55,46 @@ const generateBombBoard = (numberOfRows, numberOfColumns, numberOfBombs) => {
 };
 
 /*
+ * Returns the number of bombs in adjacent tiles
+ */
+const getNumberOfNeighborBombs = (bombBoard, rowIndex, columnIndex) => {
+  /* For each nested array:
+   * First element - Row offset
+   * Second element - Column offset
+   */
+  let neighborOffsets = [
+    [-1, -1],
+    [-1, 0],
+    [-1, 1],
+    [0, -1],
+    [0, 1],
+    [1, -1],
+    [1, 0],
+    [1, 1],
+  ];
+  const numberOfRows = bombBoard.length;
+  const numberOfColumns = bombBoard[0].length;
+  let numberOfBombs = 0;
+
+  neighborOffsets.forEach(offset => {
+    const neighborRowIndex = rowIndex + offset[0];
+    const neighborColumnIndex = columnIndex + offset[1];
+
+    // Conditions for a valid neighborRowIndex & neighborColumnIndex
+    rowOffsetCondition = (neighborRowIndex >= 0) && (neighborRowIndex < numberOfRows);
+    columnOffsetCondition = (neighborColumnIndex >= 0) && (neighborColumnIndex < numberOfColumns);
+
+    if (rowOffsetCondition && columnOffsetCondition) {
+      if (bombBoard[neighborRowIndex][neighborColumnIndex] === 'B') {
+        numberOfBombs += 1;
+      }
+    }
+  });
+
+  return numberOfBombs;
+};
+
+/*
  * Takes a board array and prints it to the console
  */
 const printBoard = (board) => {
