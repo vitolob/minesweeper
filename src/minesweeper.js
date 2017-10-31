@@ -81,8 +81,8 @@ const getNumberOfNeighborBombs = (bombBoard, rowIndex, columnIndex) => {
     const neighborColumnIndex = columnIndex + offset[1];
 
     // Conditions for a valid neighborRowIndex & neighborColumnIndex
-    rowOffsetCondition = (neighborRowIndex >= 0) && (neighborRowIndex < numberOfRows);
-    columnOffsetCondition = (neighborColumnIndex >= 0) && (neighborColumnIndex < numberOfColumns);
+    let rowOffsetCondition = (neighborRowIndex >= 0) && (neighborRowIndex < numberOfRows);
+    let columnOffsetCondition = (neighborColumnIndex >= 0) && (neighborColumnIndex < numberOfColumns);
 
     if (rowOffsetCondition && columnOffsetCondition) {
       if (bombBoard[neighborRowIndex][neighborColumnIndex] === 'B') {
@@ -127,6 +127,6 @@ printBoard(playerBoard);
 console.log('Bomb Board: ');
 printBoard(bombBoard);
 
-flipTile(playerBoard, bombBoard, 0, 0);
+flipTile(playerBoard, bombBoard, 1, 1);
 console.log('Updated Player Board: ');
 printBoard(playerBoard);
