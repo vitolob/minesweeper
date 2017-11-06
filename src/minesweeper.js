@@ -163,15 +163,6 @@ class Board {
 
 }
 
-let playerBoard = generatePlayerBoard(3,4);
-let bombBoard = generateBombBoard(3,4,5);
+const g = new Game(3,3,3);
 
-console.log('Player Board: ');
-printBoard(playerBoard);
-
-console.log('Bomb Board: ');
-printBoard(bombBoard);
-
-flipTile(playerBoard, bombBoard, 1, 1);
-console.log('Updated Player Board: ');
-printBoard(playerBoard);
+g.playMove(0,0);
